@@ -44,7 +44,7 @@ class AuthAPIView(APIView):
                 return Response(response)
 
 
-        return Resposne({'detail': 'Invalid credentials!'}, status=401)
+        return Response({'detail': 'Invalid credentials!'}, status=401)
 
 
 
