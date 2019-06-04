@@ -10,7 +10,7 @@ import json
 
 
 class BidSheetAPIDetailView(mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.RetrieveAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, permissions.IsAdminUser, IsOwnerOrReadOnly]
     # authentication_classes = []
     serializer_class = BidSheetSerializer
     queryset = BidSheet.objects.all()
