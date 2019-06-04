@@ -13,6 +13,7 @@ class BidSheet(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     job_name = models.CharField(max_length=150, null=True, blank=True)
     bill_to = models.CharField(max_length=150, null=True, blank=True)
+    email = models.CharField(max_length=150, null=True, blank=True)
     address = models.CharField(max_length=150, null=True, blank=True)
     city = models.CharField(max_length=150, null=True, blank=True)
     phone = models.CharField(max_length=150, null=True, blank=True)

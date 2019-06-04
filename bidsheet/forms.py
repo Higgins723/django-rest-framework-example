@@ -8,6 +8,7 @@ class BidSheetForm(forms.ModelForm):
             'user',
             'job_name',
             'bill_to',
+            'email',
             'address',
             'city',
             'phone',
@@ -20,7 +21,7 @@ class BidSheetForm(forms.ModelForm):
             'total_for_extras',
             'grand_total'
         ]
-    
+
     def clean(self, *args, **kwargs):
         data = self.cleaned_data
         job_name = data.get('job_name', None)

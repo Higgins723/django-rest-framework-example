@@ -4,7 +4,7 @@ from .forms import BidSheetForm
 
 # Register your models here.
 class BidSheetAdmin(admin.ModelAdmin):
-    list_display = ['job_name', 'address']
+    list_display = ['job_name', 'address', 'email']
     form = BidSheetForm
 
 admin.site.register(BidSheet, BidSheetAdmin)
