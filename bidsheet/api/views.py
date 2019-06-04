@@ -39,7 +39,7 @@ class BidSheetAPIView(mixins.CreateModelMixin, generics.ListAPIView):
         qs = BidSheet.objects.all()
         query = request.GET.get('q')
         if query is not None:
-            qs = qs.filter(content__icontains=query)
+            qs = qs.filter(job_name__icontains=query)
         return qs
 
     def post(self, request, *args, **kwargs):

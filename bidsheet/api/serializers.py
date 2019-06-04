@@ -35,11 +35,10 @@ class BidSheetSerializer(serializers.ModelSerializer):
         return "/api/bidsheet/{id}/".format(id=obj.id)
 
     def validate(self, data):
-        job_name = data.get('job_name', None)
-        if job_name == "":
-            job_name == None
-        if job_name is None:
-            raise serializers.ValidationError('Job Name is required.')
+        content = data.get('job_name', None)
+        email = data.get('email', None)
+        if content == "" or email == "":
+            raise serializers.ValidationError('Job Name and email are required')
         return data
 
 class BidSheetInlineUserSerializer(BidSheetSerializer):
